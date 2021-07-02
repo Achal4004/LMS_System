@@ -70,11 +70,11 @@ public class Routes implements ApplicationRoutes {
         ////////////////////////////////////////////////////////////////////////
         //////////// Books
         ////////////////////////////////////////////////////////////////////////
-		router.GET().route("/api/book.json").with(ApiController::getbooksJson);
+		router.GET().route("/api/books").with(ApiController::getbooksJson);
 		router.POST().route("/newbook").with(BookController::newBookAdd);
 		router.DELETE().route("/delete/{b_id}").with(BookController::deleteBook);
-		//router.PUT().route("/update/{b_id}").with(BookController::updateBook);
-		router.GET().route("/showbook.json").with(BookController::showAllBooks);
+		router.PUT().route("/update").with(BookController::updateBook);
+		router.GET().route("/showbook").with(BookController::showAllBooks);
 		router.GET().route("/getbookbyid/{b_id}").with(BookController::findBookbyId);
 		router.GET().route("/getbookbytitle/{b_title}").with(BookController::findBookbyTitle);
 		router.GET().route("/getbookbyauthor/{b_author}").with(BookController::findBookbyAuthor);
@@ -82,8 +82,8 @@ public class Routes implements ApplicationRoutes {
 		/////////////////////////////////////////////////////////////////////////
 		//Student
 		/////////////////////////////////////////////////////////////////////////
-		router.GET().route("/api/student.json").with(ApiController::getstudentsJson);
-		router.GET().route("/student.json").with(StudentController::ShowStudents);
+		router.GET().route("/api/students").with(ApiController::getstudentsJson);
+		router.GET().route("/students").with(StudentController::ShowStudents);
 		
 		
 		

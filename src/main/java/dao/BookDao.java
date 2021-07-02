@@ -120,15 +120,26 @@ public class BookDao {
 	 }
 
 	@Transactional
-	public void updateBook(Book book) {
-
+	public boolean updateBookA(Book book) {
+		try {
 		EntityManager entityManager = entitiyManagerProvider.get();
-		//Book book =getBookbyId(book.b_id)
-		Query query = entityManager.createQuery("update Book set b_title =:title, b_author=:author, where b_id=:id");
+		Book book2 = entityManager.find(Book.class, book.b_id);
+		Query query = entityManager.createQuery("update  Book  set b_title =:title, b_author=:author where b_id=:id");
 		query.setParameter("id", book.b_id);
 		query.setParameter("title", book.b_title);
 		query.setParameter("author", book.b_author);
-
+		query.setParameter("copies", book.b_copies);
+		query.executeUpdate();
+		if(book2!=null) {
+			return true;
+		}
+		return false;
+		}
+		catch(Exception e) 
+		{
+			e.printStackTrace();
+			return false;
+		}
 	}	
 
 }

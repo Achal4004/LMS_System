@@ -74,5 +74,15 @@ public class BookController {
 			return Results.ok().json().render("Not Found");
 	}
 	
-	
+	public Result updateBook(Context context, Book book) {
+		boolean b=bookDao.updateBookA(book);
+		if(b==true) {
+		context.getFlashScope().success("Book Updated");
+		return Results.ok().json().render("Book Updated sucessfully");
+		}
+		else {
+			return Results.ok().json().render("Book Not Found");
+		}
+
+	}
 }
