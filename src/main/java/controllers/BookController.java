@@ -31,6 +31,7 @@ public class BookController {
 	}
 
 	// 2
+	
 	public Result newBookAdd(Context context, BookDto bookDto) {
 		bookDao.addBook(bookDto);
 		context.getFlashScope().success("New Book Addded");

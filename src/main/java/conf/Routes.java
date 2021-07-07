@@ -43,6 +43,7 @@ import com.google.inject.Inject;
 import controllers.ApiController;
 import controllers.ApplicationController;
 import controllers.BookController;
+import controllers.CORSFilter;
 import controllers.LoginLogoutController;
 import controllers.StudentController;
 
@@ -61,7 +62,8 @@ public class Routes implements ApplicationRoutes {
      *            The default router of this application
      */
     @Override
-    public void init(Router router) {  
+    public void init(Router router) { 
+    	router.OPTIONS().route("/.*").with(CORSFilter::cors);
         if (!ninjaProperties.isProd()) {
             router.GET().route("/setup").with(ApplicationController::setup);
         }

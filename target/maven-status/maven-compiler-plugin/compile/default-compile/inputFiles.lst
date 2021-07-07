@@ -14,6 +14,7 @@ C:\Users\Dell\eclipse-workspace\ap\src\main\java\models\ArticleDto.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\controllers\LoginLogoutController.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\controllers\BookController.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\models\Article.java
+C:\Users\Dell\eclipse-workspace\ap\src\main\java\controllers\CORSFilter.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\etc\LoggedInUser.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\conf\StartupActions.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\dao\BookDao.java

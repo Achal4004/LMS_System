@@ -15,6 +15,7 @@ controllers\StudentController.class
 etc\LoggedInUserExtractor.class
 models\Article.class
 conf\Filters.class
+controllers\CORSFilter.class
 controllers\BookController.class
 models\BooksDto.class
 dao\BookDao.class
