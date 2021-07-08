@@ -124,7 +124,7 @@ public class BookDao {
 		try {
 		EntityManager entityManager = entitiyManagerProvider.get();
 		Book book2 = entityManager.find(Book.class, book.b_id);
-		Query query = entityManager.createQuery("update  Book  set b_title =:title, b_author=:author where b_id=:id");
+		Query query = entityManager.createQuery("update  Book  set b_title =:title, b_author=:author, b_copies=:copies where b_id=:id");
 		query.setParameter("id", book.b_id);
 		query.setParameter("title", book.b_title);
 		query.setParameter("author", book.b_author);
