@@ -1,0 +1,9 @@
+{
+    "name": "angular-phonecat",
+    "dependencies": {
+        "angular": "1.8.x",
+        "angular-route": "1.8.x",
+        "bootstrap": "3.3.x",
+        "http-server": "^0.12.3"
+    }
+}

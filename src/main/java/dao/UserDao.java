@@ -37,6 +37,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import models.UserEntity;
 import ninja.jpa.UnitOfWork;
@@ -44,29 +46,34 @@ import ninja.jpa.UnitOfWork;
 //import com.google.gson.Gson;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import com.google.inject.persist.Transactional;
+
+import controllers.LoginLogoutController;
 
 
 public class UserDao {
     
     @Inject
     Provider<EntityManager> entityManagerProvider;
-    
-    @UnitOfWork
+    private static Logger log = LogManager.getLogger(UserDao.class);
+    @Transactional
     public boolean isUserAndPasswordValid(String username, String password) {
         
         if (username != null && password != null) {
-            
+            log.info(password);
+            log.info(username);
             EntityManager entityManager = entityManagerProvider.get();
             
 			TypedQuery<UserEntity> q = entityManager.createQuery("SELECT x FROM UserEntity x WHERE username = :usernameParam", UserEntity.class);
             UserEntity user = getSingleResult(q.setParameter("usernameParam", username));
-           // System.out.println("//////////////////");
+            log.info(user);
 
             if (user != null) {
                 
                 if (user.password.equals(password)) {
 
                     return true;
+                    
                 }
                 
                 
@@ -78,10 +85,6 @@ public class UserDao {
  
     }
 
-    /**
-     * Get single result without throwing NoResultException, you can of course just catch the
-     * exception and return null, it's up to you.
-     */
     private static <T> T getSingleResult(TypedQuery<T> query) {
         query.setMaxResults(1);
         List<T> list = query.getResultList();

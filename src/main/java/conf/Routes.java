@@ -43,6 +43,7 @@ import com.google.inject.Inject;
 import controllers.ApiController;
 import controllers.ApplicationController;
 import controllers.BookController;
+import controllers.BorrowerController;
 import controllers.CORSFilter;
 import controllers.LoginLogoutController;
 import controllers.StudentController;
@@ -67,7 +68,7 @@ public class Routes implements ApplicationRoutes {
         if (!ninjaProperties.isProd()) {
             router.GET().route("/setup").with(ApplicationController::setup);
         }
-        router.GET().route("/").with(ApplicationController::index);
+        router.GET().route("/index").with(ApplicationController::index);
         
         ////////////////////////////////////////////////////////////////////////
         //////////// Books
@@ -86,16 +87,16 @@ public class Routes implements ApplicationRoutes {
 		/////////////////////////////////////////////////////////////////////////
 		router.GET().route("/api/students").with(ApiController::getstudentsJson);
 		router.GET().route("/students").with(StudentController::ShowStudents);
-		
+		router.POST().route("/newentry").with(BorrowerController::newentry);
+		router.GET().route("/borrowerlist").with(BorrowerController::showAllRecords);
 		
 		
         ///////////////////////////////////////////////////////////////////////
         // Login / Logout
         ///////////////////////////////////////////////////////////////////////
         router.GET().route("/login").with(LoginLogoutController::login);
-        router.POST().route("/login").with(LoginLogoutController::loginPost);
+        router.POST().route("/loginpost").with(LoginLogoutController::loginPost);
         router.GET().route("/logout").with(LoginLogoutController::logout);
-        //router.GET().route("/showbook").with(() -> Results.html().template("/showbook.ftl.html"));
         
  
         ///////////////////////////////////////////////////////////////////////

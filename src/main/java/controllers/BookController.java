@@ -49,7 +49,7 @@ public class BookController {
 	}
 
 	// 5
-	public Result findBookbyId(@PathParam("b_id") Long b_id) {
+	public Result findBookbyId(@PathParam("b_id") int b_id) {
 		Book book = bookDao.getBookbyId(b_id);
 		if(book!=null) {
 			return Results.ok().json().render("Here is Your Book "+book.b_title);
@@ -67,7 +67,7 @@ public class BookController {
 	}
 	
 	//7
-	public Result deleteBook(@PathParam("b_id") Long b_id) {
+	public Result deleteBook(@PathParam("b_id") int b_id) {
 		boolean succeeded = bookDao.deleteBook(b_id);
 		if (succeeded == true) {	
 			return Results.ok().json().render("Book is Deleted");

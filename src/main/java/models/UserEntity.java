@@ -28,16 +28,19 @@ import javax.persistence.Table;
 public class UserEntity {
     
     @Id
-    
     @Column(name="id")
     @GeneratedValue(strategy=GenerationType.AUTO)
     public Long id;
+    
     @Column(name="username")
     public String username;
+    
     @Column(name="password")
     public String password;
+    
     @Column(name="fullname")
     public String fullname;
+    
     @Column(name="isAdmin")
     public boolean isAdmin;
     
@@ -48,5 +51,5 @@ public class UserEntity {
         this.password = password;
         this.fullname = fullname;
     }
- 
+
 }

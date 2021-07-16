@@ -11,6 +11,7 @@ import org.owasp.html.Sanitizers;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import com.google.inject.persist.Transactional;
 
 import models.Student;
 import models.StudentsDto;
@@ -24,7 +25,7 @@ public class StudentDao {
 	@ElementCollection
 	java.util.ListIterator<Student> student;
 
-	@UnitOfWork
+	@Transactional
 	public StudentsDto ShowAllstudents() {
 		EntityManager entityManager = entitiyManagerProvider.get();
 		TypedQuery<Student> q = entityManager.createQuery("SELECT x FROM Student x", Student.class);

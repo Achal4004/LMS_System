@@ -12,9 +12,8 @@ import javax.persistence.Id;
 public class Book {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="b_id")
-	public Long b_id;
+	public int b_id;
 	
 	@Column(name="b_title")
 	public String b_title;
@@ -26,11 +25,11 @@ public class Book {
 	public int b_copies;
 
 
-	public Long getB_id() {
+	public int getB_id() {
 		return b_id;
 	}
 
-	public void setB_id(Long b_id) {
+	public void setB_id(int b_id) {
 		this.b_id = b_id;
 	}
 
@@ -60,8 +59,9 @@ public class Book {
 	public Book() {
 		
 	}
-	public Book( String b_title, String b_author, int b_copies) {
+	public Book(int b_id, String b_title, String b_author, int b_copies) {
 		super();
+		this.b_id = b_id;
 		this.b_title = b_title;
 		this.b_author = b_author;
 		this.b_copies = b_copies;

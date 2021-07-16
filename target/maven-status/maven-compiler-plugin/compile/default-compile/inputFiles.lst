@@ -9,6 +9,7 @@ C:\Users\Dell\eclipse-workspace\ap\src\main\java\dao\StudentDao.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\models\Student.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\models\UserEntity.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\dao\SetupDao.java
+C:\Users\Dell\eclipse-workspace\ap\src\main\java\models\Borrower.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\controllers\ApiController.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\models\ArticleDto.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\controllers\LoginLogoutController.java
@@ -20,11 +21,15 @@ C:\Users\Dell\eclipse-workspace\ap\src\main\java\conf\StartupActions.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\dao\BookDao.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\conf\Routes.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\etc\LoggedInUserExtractor.java
+C:\Users\Dell\eclipse-workspace\ap\src\main\java\models\BorrowerDto.java
+C:\Users\Dell\eclipse-workspace\ap\src\main\java\dao\BorrowedDao.java
+C:\Users\Dell\eclipse-workspace\ap\src\main\java\models\BorrowersDto.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\models\StudentDto.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\conf\ServletModule.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\controllers\ApplicationController.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\dao\ArticleDao.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\dao\UserDao.java
+C:\Users\Dell\eclipse-workspace\ap\src\main\java\controllers\BorrowerController.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\controllers\StudentController.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\controllers\ArticleController.java
 C:\Users\Dell\eclipse-workspace\ap\src\main\java\models\BookDto.java

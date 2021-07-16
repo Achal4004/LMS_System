@@ -38,10 +38,14 @@ import ninja.Results;
 import ninja.params.Param;
 import ninja.session.Session;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 import dao.UserDao;
+import models.UserEntity;
 
 @Singleton
 public class LoginLogoutController {
@@ -49,7 +53,7 @@ public class LoginLogoutController {
     @Inject
     UserDao userDao;
     
-    
+    private static Logger log = LogManager.getLogger(LoginLogoutController.class);
     ///////////////////////////////////////////////////////////////////////////
     // Login
     ///////////////////////////////////////////////////////////////////////////
@@ -59,33 +63,22 @@ public class LoginLogoutController {
 
     }
 
-    public Result loginPost(@Param("username") String username,
-                            @Param("password") String password,
-                            @Param("rememberMe") Boolean rememberMe,
+    public Result loginPost(UserEntity user,
                             Context context) {
+    	//log.info("/////////////////////////////////////////////////");
+    	//log.info(user);
 
-        boolean isUserNameAndPasswordValid = userDao.isUserAndPasswordValid(username, password);
+        boolean isUserNameAndPasswordValid = userDao.isUserAndPasswordValid(user.username, user.password);
+        
 
         if (isUserNameAndPasswordValid) {
             Session session = context.getSession();
-            session.put("username", username);
-
-            if (rememberMe != null && rememberMe) {
-                session.setExpiryTime(24 * 60 * 60 * 1000L);
-            }
-
-            context.getFlashScope().success("login.loginSuccessful");
-
-            return Results.redirect("/");
+     
+            return Results.json().render("login Successful");
 
         } else {
 
-            // something is wrong with the input or password not found.
-            context.getFlashScope().put("username", username);
-            context.getFlashScope().put("rememberMe", String.valueOf(rememberMe));
-            context.getFlashScope().error("login.errorLogin");
-
-            return Results.redirect("/login");
+        	 return Results.json().render("login not Successful");
 
         }
 

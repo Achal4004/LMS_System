@@ -78,12 +78,12 @@ public class ApiController {
 
 	}
 	
-	public Result updateBook(@PathParam("b_id") Long b_id) {
+	public Result updateBook(@PathParam("b_id") int b_id) {
 		
 		return Results.noContent();		
 	}
 	
-	public Result DeleteBook(@PathParam("b_id") Long b_id) {
+	public Result DeleteBook(@PathParam("b_id") int b_id) {
 		bookDao.deleteBook(b_id);
 		return Results.redirect("/delete");
 	}

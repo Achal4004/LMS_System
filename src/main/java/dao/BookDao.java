@@ -45,7 +45,7 @@ public class BookDao {
 	@Transactional
 	public boolean addBook(BookDto bookDto) {
 		EntityManager entityManager = entitiyManagerProvider.get();
-		Book book1 = new Book( bookDto.b_title, bookDto.b_author,bookDto.b_copies);
+		Book book1 = new Book(bookDto.b_id, bookDto.b_title, bookDto.b_author,bookDto.b_copies);
 		entityManager.persist(book1);
 		return true;
 
@@ -53,7 +53,7 @@ public class BookDao {
 
 
 	@Transactional
-	public boolean deleteBook(long b_id) {
+	public boolean deleteBook(int b_id) {
 		try {
 		EntityManager entityManager = entitiyManagerProvider.get();
 		Book book = entityManager.find(Book.class, b_id);
@@ -67,7 +67,7 @@ public class BookDao {
 	}
 	
 	@Transactional
-	public Book getBookbyId(Long b_id){
+	public Book getBookbyId(int b_id){
 		EntityManager entityManager = entitiyManagerProvider.get();
 		Book book=null;
 		try {

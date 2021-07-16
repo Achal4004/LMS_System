@@ -2,11 +2,14 @@ conf\StartupActions.class
 dao\UserDao.class
 controllers\ApiController.class
 controllers\ApplicationController.class
+dao\BorrowedDao.class
 conf\Routes.class
 models\ArticlesDto.class
 etc\LoggedInUser.class
 filters\LoggerFilter.class
 models\Book.class
+controllers\BorrowerController.class
+models\Borrower.class
 models\StudentsDto.class
 controllers\LoginLogoutController.class
 dao\StudentDao.class
@@ -20,6 +23,8 @@ controllers\BookController.class
 models\BooksDto.class
 dao\BookDao.class
 controllers\BookControllerA.class
+models\BorrowerDto.class
+models\BorrowersDto.class
 models\ArticleDto.class
 models\BookDto.class
 dao\ArticleDao.class

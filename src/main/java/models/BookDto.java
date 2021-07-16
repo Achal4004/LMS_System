@@ -13,6 +13,8 @@ public class BookDto {
     
     public  int b_copies;
     
+    public int b_id;
+    
     public BookDto() {}
 
 }
