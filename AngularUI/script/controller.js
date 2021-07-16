@@ -2,25 +2,25 @@ var app = angular.module("mymodule", ['ngRoute']);
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/Show', {
-        templateUrl: './showbook.html',
+        templateUrl: '/Pages/showbook.html',
         controller: 'datacontroller'
     }).when('/Addbook', {
-        templateUrl: './Addbook.html',
+        templateUrl: '/Pages/Addbook.html',
         controller: 'postserviceCtrl'
     }).when('/Updatebook', {
-        templateUrl: './edit.html',
+        templateUrl: '/Pages/edit.html',
         controller: 'updatecontroller'
     }).when('/Admin', {
-        templateUrl: './adminlogin.html',
+        templateUrl: '/Pages/adminlogin.html',
         controller: 'logincontroller'
     }).when('/Layout', {
-        templateUrl: './layout.html',
+        templateUrl: '/Pages/layout.html',
         controller: 'logincontroller'
     }).when('/Student', {
-        templateUrl: './StudentDetail.html',
+        templateUrl: '/Pages/StudentDetail.html',
         controller: 'studentcontroller'
     }).when('/StudentLogin', {
-        templateUrl: './StudentDetail.html',
+        templateUrl: '/Pages/StudentDetail.html',
         controller: 'Studentlogincontroller'
     })
 }]);
@@ -62,7 +62,7 @@ app.controller('logincontroller', function($scope, $http) {
                     alert("login not Successful");
                 } else {
                     alert("login Successful")
-                    window.location.href = "./layout.html"
+                    window.location.href = "./Pages/layout.html"
                 }
             },
             (error) => {
